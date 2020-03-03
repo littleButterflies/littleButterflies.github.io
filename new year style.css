@@ -1,0 +1,127 @@
+@charset "utf-8";	/* 指定样式文件编码集 */
+/* 引入Google字体 */
+@import url('https://fonts.font.im/css?family=Cabin+Sketch');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+@import url('https://fonts.font.im/css?family=Roboto');
+/* 层叠样式表 */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+@media screen and (max-width:1024px) {
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	/* min-width: 80vw;
+	max-width: 100vh; */
+	/* width: 100vw; */
+	background: url('../image/新耀行/back.jpg') center/cover no-repeat;
+	background-attachment: fixed;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	background-attachment: fixed;
+	background-blend-mode: multiply;
+	width: 85%;
+	justify-content: center;
+	align-items: center;
+	height: 85%;
+	box-shadow:  1px 1px 20px 1px rgba(122,62,50,.55), 0 0 50px 300px rgba(25,100,66,.25);
+	text-align: center;
+	color: #FFFFFF;
+	text-transform: capitalize;
+}
+.container>.title{
+	/* margin-top: 50px; */
+	width: 95%;
+	/* height: 20%; */
+	font-family: tahoma,cursive;
+	font-size: 5em;
+	line-height: 1em;
+	font-style: italic;
+	font-weight: 800;
+	letter-spacing: 10px;
+	color: #8BCC92;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-wrap: break-word;
+	-webkit-text-stroke: 5px #553344;
+	-webkit-text-fill-color: #FFFFFF;
+	outline: #ADFF2F 5px groove;
+	/* -moz-outline-radius: 20px; */
+	border: 20px solid darkcyan;
+} 
+.container>.Year-name{
+	margin: 100px auto;
+	padding: 30px;
+	color: greenyellow;
+	font: bold italic 15em/.25em 'Great Vibes', cursive;
+	letter-spacing: 20px;
+	-webkit-text-stroke: 1px orangered;
+	/* background: rgba(188,66,45,.89); */
+	background-blend-mode: multiply;
+	text-shadow: 0 0 20px #F0F8FF;
+	-webkit-box-reflect: below 10px linear-gradient(#064543,rgba(235,50,100,.35));
+}
+.container>.countdown{
+	width: 60%;
+	flex-grow: 2;
+	flex-shrink: 1;
+	display: flex;
+	justify-content: space-around;
+}
+  .countdown  div{
+	position: relative;
+	width: 120px;
+	height: 120px;
+	background-color:rgba(20,55,155,.58);
+	font-family: 'Roboto',cursive;
+	font-size: 4em;
+	border-radius: 5px;
+	box-shadow: 0 10px 15px 1px #98fd34;
+	transition: all .68s ease-in-out;
+	overflow: hidden;
+	color: #ADFF2F;
+	line-height: 100px;
+}
+.container > .countdown > div:before{
+	content: ' ';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	background-color: rgba(200,100,5,.66);
+	color: #87CEEB;
+	font: oblique .45em/35px 'Cabin Sketch', cursive;
+}
+
+.container>.countdown>div:hover{
+	transform:  translateY(-30px) scale(1.28);
+}
+.container>.countdown>div#days:before{
+	content: 'Days';
+}
+.container>.countdown>div#hours:before{
+	content: 'Hours';
+}
+.container>.countdown>div#minutes:before{
+	content: 'Minutes';
+}
+.container>.countdown>div#seconds:before{
+	content: 'Seconds';
+}
+	
+}
+
+#wrap-star{
+		width: 80vw;
+		height: 200vh;
+		background: radial-gradient(100% 10%,at bottom center,#f5642f);
+	}
