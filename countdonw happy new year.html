@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="keywords" content="新年 倒计时 新耀行 CSS3 布局 demo "/>
+	<meta name="description" content="在新的一年到来之际 做了一个2020倒计时的demo页面 使用原生的JS"/>
+	<meta name="designer" content=""/>
+	<title>Time Countdown New Year To 2020</title>
+	<link rel="shortcut icon" type="image/png" href="../image/新耀行/新耀行LOGO 白底使用竖.png"/>
+	<link rel="stylesheet" type="text/css" href="../css/new year style.css"/>
+	<!-- <link href="https://fonts.font.im/css?family=Roboto" rel="stylesheet"> -->
+</head>
+<body>
+	<div class="container">
+		<span class="title">countdown to new year</span>
+		<h1 class="Year-name">2020</h1>
+		<div class="countdown">
+			<div class="count-box" id="days"></div>
+			<div class="count-box" id="hours"></div>
+			<div class="count-box" id="minutes"></div>
+			<div class="count-box" id="seconds"></div>
+		</div>
+		
+	</div>
+					
+</body>
+	<!-- 实时显示倒计时 -->
+<script type="text/javascript">
+	// 自动为下一年
+	// var newYear = new Date().getFullYear() + 1;
+	// // 把指定时间点换算成毫秒
+	// var newtime =  'Jan 1 ' + newYear + '00:00:00';
+	var countdate = new Date('2020/1/1 00:00:00');
+	
+	// 定义计算倒计时时间差距的方法
+	function newYear(){
+		// 获取当前系统时间，并换算
+		var now =  new Date().getTime();
+		// 时间差
+		var gap = countdate - now;
+		
+		// 将时间点 以毫秒为单位 换算成 天、小时、分钟、秒
+		var second = 1000;
+		var minute = second * 60;
+		var hour = minute * 60;
+		var day = hour * 24;
+		
+		// 相差天数
+		var d = Math.floor(gap / day) ;
+		// 相差小时数
+		var h = Math.floor((gap % day)/(hour));
+		// 相差分钟数
+		var m = Math.floor((gap % hour)/(minute));
+		// 相差秒数
+		var s = Math.floor((gap % minute)/(second));
+		
+		// 要是数值小于10 前面补位0
+		d = d<10 ? '0'+d : d;
+		h = h<10 ? '0'+h : h;
+		m = m<10 ? '0'+m : m;
+		s = s<10 ? '0'+s : s;
+		
+		// 计算结果显示到对应的元素上
+		document.getElementById('days').innerText = d;
+		document.getElementById('hours').innerText= h;
+		document.getElementById('minutes').innerText = m;
+		document.getElementById('seconds').innerText = s;
+	}
+	
+	// 调用计时器 每秒钟刷新一次
+	setInterval(function(){
+		newYear();
+	},1000);
+</script>
+</html>
